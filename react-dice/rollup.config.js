@@ -1,19 +1,23 @@
-import { uglify } from 'rollup-plugin-uglify';
-import babel from 'rollup-plugin-babel' ;
+import { babel } from '@rollup/plugin-babel';
+import terser from '@rollup/plugin-terser';
 
 const config = {
   input: 'react-dice.jsx',
-  external: ['react'],
+  external: ['react', 'prop-types'],
   output: {
       format: 'umd',
       name: 'react-dice-roller',
       globals: {
-          react: "React"
+          react: "React",
+          'prop-types': "PropTypes"
       }
   },
   plugins: [
-    babel({ exclude: "node_modules/**" }),
-    uglify(),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: "node_modules/**"
+    }),
+    terser(),
   ],
 }
 export default config

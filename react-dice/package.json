@@ -1,6 +1,7 @@
 {
   "name": "react-dice-roller",
-  "version": "1.0.5",
+  "version": "2.0.0",
+  "type": "module",
   "description": "A react component that allows you to simulate a dice throw",
   "main": "dist/react-dice-roller.min.js",
   "scripts": {
@@ -24,13 +25,17 @@
   },
   "homepage": "https://github.com/JHotterbeekx/react-dice#readme",
   "devDependencies": {
-    "rollup": "^1.10.0",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-uglify": "^6.0.2"
+    "rollup": "^4.68.8",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-terser": "^0.4.4"
   },
   "dependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5"
+  },
+  "peerDependencies": {
+    "prop-types": ">=15",
+    "react": ">=16"
   }
 }

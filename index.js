@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import ReactDicePublished from 'react-dice-roller';
 import ReactDice from './react-dice/react-dice';
 
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
   <div>
     <ReactDice sides={20} showProgress />
     <ReactDicePublished sides={20} showProgress />
-  </div>,
-  document.getElementById('root')
+  </div>
 );
